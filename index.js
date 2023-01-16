@@ -57,15 +57,12 @@ $(function() {
             $(".genres-artist").prepend("<h3>Genres: </h3>");
             $(".genres-artist").append("<div class='genre-container'></div>");
             artist.genres.forEach(function(genre) {
+                //genre.charAt(0).toUpperCase() + genre.slice(1);
                 $("<div class='genre'>").text(genre).appendTo($(".genre-container"));
-                //let genreText = genre;
-                /*let arrayIsEmpty = false;
-                if (genres.length === 0) {
-                    $(".genres-artist").hide();
-                }*/
-                //$(genre).charAt(0).toUpperCase();
                 
-                //$(audio).appendTo(genre);
+                console.log(typeof(genre));
+                console.log(genre);
+                
             });
             
             $(".intro-message").hide();
@@ -91,7 +88,6 @@ $(function() {
                     audioPlayers.push(audio);
 
                     let playTriggerdByProgram = false;
-
                     audio.onplay = function() {
                         if (playTriggerdByProgram) {
                             playTriggerdByProgram = false;

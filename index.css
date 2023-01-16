@@ -130,6 +130,10 @@ button:hover {
     flex-direction: column;
 }
 
+.genre {
+    text-transform: capitalize;
+}
+
 .img-tracks-container {
     align-items: flex-start;
     display: flex;
