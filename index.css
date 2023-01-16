@@ -1,0 +1,243 @@
+html {
+    font-family: 'Montserrat', sans-serif;
+    height: 100vh;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    height: 100%;
+    min-width: 375px;
+}
+
+main {
+    margin: 0 48px;
+}
+
+header {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+}
+
+.input-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 24px;
+}
+
+.search {
+    border: 1px solid #000000;
+    padding: 8px;
+}
+
+.input-section,
+.search {
+    font-family: 'montserrat';
+}
+
+button {
+    background-color: #000000;
+    border-radius: 10px;
+    color: #ffffff;
+    cursor: pointer;
+    margin-left: 16px;
+    padding: 8px 8px;
+    transition-duration: .3s;
+}
+
+button:hover {
+    opacity: .6;
+}
+
+.content {
+    align-items: unset;
+    display: none;
+    flex-direction: column;
+    gap: 36px;
+    justify-content: center;
+    margin: 2% 0 4% 0;
+}
+
+.display-flex {
+    display: flex;
+}
+
+.intro-message,
+.error-message {
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.error-message {
+    color: #FF0000;
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+.intro-message > p {
+    margin-top: 8px;
+}
+
+.img-artist {
+    border-radius: 2%;
+    height: auto;
+    max-height: fit-content;
+    width: 50%;
+}
+
+.artist-information {
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+}
+
+.name-artist {
+    font-size: 3em;
+    text-align: center;
+}
+
+.followers-artist,
+.genres-artist h3 {
+    font-size: 1.4rem;
+}
+
+.genres-artist {
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 10px;
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin-top: 8px;
+    padding: 8px 16px;
+    text-align: left;
+}
+
+.genre-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.img-tracks-container {
+    align-items: flex-start;
+    display: flex;
+    gap: 14px;
+    justify-content: space-around;
+    margin: 0 0 2% 0;
+}
+
+.top-songs-by-artist {
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.tracks-by-artist {
+    margin-top: 8%;
+}
+
+.artist-track {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    justify-content: space-between;
+    margin: 1% 0;
+}
+
+.artist-track > p {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.artist-track audio {
+    background-color: #A9A9A9;
+    border: 3px solid #A9A9A9;
+    border-radius: 37px;
+}
+
+audio::-webkit-media-controls-panel {
+    background-color: #A9A9A9;
+    width: 50%; 
+}
+
+@media screen and (max-width: 1300px) {
+    .img-tracks-container {
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 1260px) and (min-width: 650px) {
+    .img-artist {
+        height: 670px;
+        width: 574px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .artist-track {
+        flex-direction: column;
+        gap: 0;
+        margin-top: 16px;
+    }
+
+    .artist-track audio {
+        margin-top: 4px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .content {
+        margin-top: 4%;
+    }
+
+    .img-artist {
+        height: auto;
+        width: 270px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .name-artist,
+    .intro-message h1 {
+        font-size: 1.3rem;
+        font-weight: 800;
+    }
+
+    .followers-artist,
+    .genres-artist h3 {
+        font-size: 1.1rem;
+    }
+
+    .intro-message p {
+        font-size: 1.2rem;
+    }
+    
+    .genre {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .artist-track audio {
+        height: 35px;
+    }
+}
+
+
+
+
