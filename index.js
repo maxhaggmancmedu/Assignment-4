@@ -19,7 +19,6 @@ $(function() {
             $(".error-message").hide();
             
             let artist = data.artists.items[0];
-            console.log(data);
             $(".name-artist").text(artist.name);
             $(".img-artist").attr("src", artist.images[0].url);
             $(".top-songs-by-artist").text("Top songs by artist");
@@ -28,9 +27,6 @@ $(function() {
             let artistFollowersArray = String(artistFollowers).split("").map((artistFollowers) => {
                 return Number(artistFollowers)
             })
-                
-            console.log(artistFollowersArray);
-            console.log(artistFollowers);
 
             if (artistFollowersArray.length === 4) {
                 artistFollowersFunction(1);
@@ -57,16 +53,10 @@ $(function() {
             $(".genres-artist").prepend("<h3>Genres: </h3>");
             $(".genres-artist").append("<div class='genre-container'></div>");
             artist.genres.forEach(function(genre) {
-                //genre.charAt(0).toUpperCase() + genre.slice(1);
                 $("<div class='genre'>").text(genre).appendTo($(".genre-container"));
-                
-                console.log(typeof(genre));
-                console.log(genre);
-                
             });
             
             $(".intro-message").hide();
-            
             let tracksEndpoint = API_ADDRESS + "/artist/" + artist.id + "/top-tracks";
   
             fetch(tracksEndpoint)
@@ -110,7 +100,6 @@ $(function() {
                         let trackDiv = $("<div class='artist-track'>").text(track.name).appendTo($(".tracks-by-artist"));
                         $(audio).appendTo(trackDiv);
                     }
-                    //$(".content").show();
                     $(".content").removeClass("display-flex");
                     $(".content").addClass("display-flex");
                 })
@@ -120,6 +109,6 @@ $(function() {
         $(".content, .intro-message").hide();
         $("main").append("<div class='error-message'></div>");
         $(".error-message").text("Something went wrong: " + error);
-        })
+        });
     }
-})
+});
